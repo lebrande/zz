@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from 'react';
 
+import { BoatItemData } from '../../types/BoatItemData';
+import BoatItem from '../BoatItem/BoatItem';
+
 const App = () => {
-  const [boats, setBoats] = useState([]);
+  const [boats, setBoats] = useState<BoatItemData[]>([]);
 
   useEffect(() => {
     fetch('./data.json')
       .then((data) => data.json())
-      .then((data) => {
+      .then((data: { results: BoatItemData[] }) => {
         setBoats(data.results);
       });
   }, []);
 
   return (
-    <div>
-      {boats.map(({ id, boat_summary: { name } }) => (
-        <div key={id}>
-          <p>{name}</p>
-        </div>
+    <>
+      {boats.map((boat) => (
+        <BoatItem
+          key={boat.id}
+          {...boat}
+        />
       ))}
-    </div>
+    </>
   );
 };
 

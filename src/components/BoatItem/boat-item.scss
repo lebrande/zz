@@ -1,0 +1,19 @@
+@import '../../scss/vars.scss';
+@import '../../scss/placeholders/typography.scss';
+
+.boat-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+
+  &__label {
+    @extend %heading-7;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding: 8px 8px 8px 18px;
+    background-color: $color-charcoal-grey;
+    position: absolute;
+    top: 2em;
+    left: 0;
+  }
+}

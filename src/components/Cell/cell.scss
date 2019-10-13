@@ -1,0 +1,13 @@
+@import '../../scss/vars.scss';
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px;
+  border-right: 1px solid $color-pinkish-grey;
+
+  &:last-of-type {
+    border-right: none;
+  }
+}

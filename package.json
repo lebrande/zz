@@ -12,12 +12,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/classnames": "^2.2.9",
     "@types/react-dom": "^16.9.1",
     "@types/react-router-dom": "^5.1.0",
     "parcel-plugin-static-files-copy": "^2.2.1",
+    "sass": "^1.23.0",
     "typescript": "^3.6.4"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "react": "^16.0.0",
     "react-dom": "^16.10.2"
   },
