@@ -8,6 +8,7 @@ import Cell from '../Cell/Cell';
 import Row from '../Row/Row';
 import BoatWrapper from './BoatWrapper';
 import BoatLabel from './BoatLabel';
+import Badge from '../Badge/Badge';
 
 type TProps = BoatData;
 
@@ -44,9 +45,8 @@ const Boat: FunctionComponent<TProps> = ({
           locality={locality}
         />
       </Cell>
-      <Cell>
-        <p><span>HOT</span> 69 views</p>
-        <p>in the last 24h</p>
+      <Cell centered>
+        <Badge />
       </Cell>
     </Row>
     <Row>
