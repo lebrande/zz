@@ -1,16 +1,17 @@
 import React, { FunctionComponent } from 'react';
 
-import './boat-item.scss';
-
 import { IMAGE_BASE_URL } from '../../constants';
-import { BoatItemData } from '../../types/BoatItemData';
-import BoatItemName from '../BoatItemName/BoatItemName';
+import { BoatData } from '../../types/BoatData';
+
+import BoatName from '../BoatName/BoatName';
 import Cell from '../Cell/Cell';
 import Row from '../Row/Row';
+import BoatWrapper from './BoatWrapper';
+import BoatLabel from './BoatLabel';
 
-type TProps = BoatItemData;
+type TProps = BoatData;
 
-const BoatItem: FunctionComponent<TProps> = ({
+const Boat: FunctionComponent<TProps> = ({
   boat_summary: { 
     name,
     images,
@@ -24,8 +25,8 @@ const BoatItem: FunctionComponent<TProps> = ({
     locality,
   },
 }) => (
-  <div className="boat-item">
-    <p className="boat-item__label">Zizoo recommended</p>
+  <BoatWrapper>
+    <BoatLabel>Zizoo recommended</BoatLabel>
     <Row>
       <Cell>
         <div>
@@ -35,7 +36,7 @@ const BoatItem: FunctionComponent<TProps> = ({
     </Row>
     <Row highlighted>
       <Cell>
-        <BoatItemName
+        <BoatName
           name={name}
           model={model}
           year={year}
@@ -92,7 +93,7 @@ const BoatItem: FunctionComponent<TProps> = ({
         <button>view details</button>
       </Cell>
     </Row>
-  </div>
+  </BoatWrapper>
 );
 
-export default BoatItem;
+export default Boat;

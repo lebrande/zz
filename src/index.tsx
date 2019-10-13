@@ -1,12 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { ThemeProvider } from 'styled-components';
 
-import './scss/reset.scss';
-import './scss/global.scss';
+import Reset from './styled/Reset';
+import Global from './styled/Global';
 
 import App from './components/App/App';
+import { primaryTheme } from './styled/primaryTheme';
 
 render(
-  <App />,
+  <ThemeProvider theme={primaryTheme}>
+    <>
+      <Reset />
+      <Global />
+      <App />
+    </>
+  </ThemeProvider>,
   document.getElementById('app'),
 );

@@ -1,17 +1,15 @@
-import React, { ReactNode, FunctionComponent } from 'react';
+import styled from 'styled-components';
 
-import './cell.scss';
+const Cell = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px;
+  border-right: 1px solid ${({ theme }) => theme.colors.pinkishGrey};
 
-type TProps = {
-  children: ReactNode;
-};
-
-const Cell: FunctionComponent<TProps> = ({
-  children,
-}) => (
-  <div className="cell">
-    {children}
-  </div>
-);
+  &:last-of-type {
+    border-right: none;
+  }
+`;
 
 export default Cell;

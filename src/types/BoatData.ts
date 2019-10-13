@@ -1,4 +1,4 @@
-export type BoatItemData = {
+export type BoatData = {
   id: string;
   boat_summary: {
     name: string;
