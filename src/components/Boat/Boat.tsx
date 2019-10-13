@@ -9,6 +9,7 @@ import Row from '../Row/Row';
 import BoatWrapper from './BoatWrapper';
 import BoatLabel from './BoatLabel';
 import Badge from '../Badge/Badge';
+import Stat from '../Stat/Stat';
 
 type TProps = BoatData;
 
@@ -20,6 +21,9 @@ const Boat: FunctionComponent<TProps> = ({
     model: {
       name: model,
     },
+    length,
+    cabins,
+    nr_guests,
   },
   marina: {
     country,
@@ -50,17 +54,14 @@ const Boat: FunctionComponent<TProps> = ({
       </Cell>
     </Row>
     <Row>
-      <Cell>
-        <p>24.04m</p>
-        <p>lenght</p>
+      <Cell centered>
+        <Stat value={`${length}m`} name="length"/>
       </Cell>
-      <Cell>
-        <p>4</p>
-        <p>cabins</p>
+      <Cell centered>
+        <Stat value={`${cabins}`} name="cabins"/>
       </Cell>
-      <Cell>
-        <p>10</p>
-        <p>guests</p>
+      <Cell centered>
+        <Stat value={`${nr_guests}`} name="guests"/>
       </Cell>
       <Cell>
         <p>*****</p>

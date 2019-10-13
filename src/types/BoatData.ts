@@ -7,6 +7,9 @@ export type BoatData = {
     model: {
       name: string;
     },
+    length: number;
+    cabins: number;
+    nr_guests: number;
   },
   marina: {
     country: string;
