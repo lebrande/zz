@@ -10,6 +10,7 @@ import BoatWrapper from './BoatWrapper';
 import BoatLabel from './BoatLabel';
 import Badge from '../Badge/Badge';
 import Stat from '../Stat/Stat';
+import Rating from '../Rating/Rating';
 
 type TProps = BoatData;
 
@@ -63,9 +64,8 @@ const Boat: FunctionComponent<TProps> = ({
       <Cell centered>
         <Stat value={`${nr_guests}`} name="guests"/>
       </Cell>
-      <Cell>
-        <p>*****</p>
-        <p>3 reviews</p>
+      <Cell centered>
+        <Rating />
       </Cell>
     </Row>
     <Row>
