@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 type TProps = {
   centered?: boolean;
+  noBorder?: boolean;
 };
 
 const Cell = styled.div<TProps>`
@@ -11,7 +12,7 @@ const Cell = styled.div<TProps>`
   align-items: ${(props) => props.centered ? 'center' : 'flex-start'};
   flex-grow: 1;
   padding: 10px;
-  border-right: 1px solid ${({ theme }) => theme.colors.pinkishGrey};
+  border-right: ${props => props.noBorder ? 'none' : `1px solid ${props.theme.colors.pinkishGrey}`};
 
   &:last-of-type {
     border-right: none;
@@ -20,6 +21,7 @@ const Cell = styled.div<TProps>`
 
 Cell.defaultProps = {
   centered: false,
+  noBorder: false,
 };
 
 export default Cell;
