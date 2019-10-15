@@ -13,6 +13,7 @@ import Stat from '../Stat/Stat';
 import Rating from '../Rating/Rating';
 import CheckList from '../CheckList/CheckList';
 import Features from '../Features/Features';
+import Price from '../Price/Price';
 
 type TProps = BoatData;
 
@@ -52,21 +53,21 @@ const Boat: FunctionComponent<TProps> = ({
           locality={locality}
         />
       </Cell>
-      <Cell centered>
+      <Cell centeredV centeredH>
         <Badge />
       </Cell>
     </Row>
     <Row>
-      <Cell centered>
+      <Cell centeredV centeredH>
         <Stat value={`${length}m`} name="length"/>
       </Cell>
-      <Cell centered>
+      <Cell centeredV centeredH>
         <Stat value={`${cabins}`} name="cabins"/>
       </Cell>
-      <Cell centered>
+      <Cell centeredV centeredH>
         <Stat value={`${nr_guests}`} name="guests"/>
       </Cell>
-      <Cell centered>
+      <Cell centeredV centeredH>
         <Rating />
       </Cell>
     </Row>
@@ -91,9 +92,11 @@ const Boat: FunctionComponent<TProps> = ({
       </Cell>
     </Row>
     <Row>
-      <Cell>
-        <p>from</p>
-        <p>€1,094.00 <span>weekly</span></p>
+      <Cell centeredV>
+        <Price
+          price="€1,094.00"
+          period="weekly"
+        />
       </Cell>
       <Cell>
         <p>direct booking</p>

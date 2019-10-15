@@ -8,6 +8,10 @@ const Global = createGlobalStyle`
   img {
     max-width: 100%;
   }
+
+  button {
+    border: none;
+  }
 `;
 
 export default Global;
