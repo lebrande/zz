@@ -14,6 +14,7 @@ import Rating from '../Rating/Rating';
 import CheckList from '../CheckList/CheckList';
 import Features from '../Features/Features';
 import Price from '../Price/Price';
+import CallToAction from '../CallToAction/CallToAction';
 
 type TProps = BoatData;
 
@@ -98,9 +99,11 @@ const Boat: FunctionComponent<TProps> = ({
           period="weekly"
         />
       </Cell>
-      <Cell>
-        <p>direct booking</p>
-        <button>view details</button>
+      <Cell centeredH centeredV>
+        <CallToAction
+          label="direct booking"
+          buttonLabel= "view details"
+        />
       </Cell>
     </Row>
   </BoatWrapper>
