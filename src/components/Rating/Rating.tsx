@@ -5,7 +5,7 @@ import starSvg from '../../svg/star.svg';
 
 import RatingStars from './RatingStars';
 import RatingStar from './RatingStar';
-import StatName from '../Stat/StatName';
+import Label from '../Label/Label';
 
 const Rating = () => (
   <>
@@ -14,9 +14,9 @@ const Rating = () => (
         <RatingStar key={i} src={starSvg} />
       ))}
     </RatingStars>
-    <StatName>
+    <Label>
       3 reviews
-    </StatName>
+    </Label>
   </>
 );
 

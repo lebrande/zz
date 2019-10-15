@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
 import StatValue from './StatValue';
-import StatName from './StatName';
+import Label from '../Label/Label';
 
 type TProps = {
   value: string;
@@ -14,7 +14,7 @@ const Stat: FunctionComponent<TProps> = ({
 }) => (
   <>
     <StatValue>{value}</StatValue>
-    <StatName>{name}</StatName>
+    <Label>{name}</Label>
   </>
 );
 

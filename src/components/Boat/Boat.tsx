@@ -12,6 +12,7 @@ import Badge from '../Badge/Badge';
 import Stat from '../Stat/Stat';
 import Rating from '../Rating/Rating';
 import CheckList from '../CheckList/CheckList';
+import Features from '../Features/Features';
 
 type TProps = BoatData;
 
@@ -77,12 +78,16 @@ const Boat: FunctionComponent<TProps> = ({
         ]} />
       </Cell>
       <Cell noBorder>
-        <p>Sail type</p>
-        <p>Rolling Mainsail</p>
+        <Features
+          label="Sail type"
+          list={['Rolling Mainsail']}
+        />
       </Cell>
       <Cell noBorder>
-        <p>Free extras</p>
-        <p>AirCon, WiFi</p>
+        <Features
+          label="Free extras"
+          list={['AirCon', 'WiFi']}
+        />
       </Cell>
     </Row>
     <Row>

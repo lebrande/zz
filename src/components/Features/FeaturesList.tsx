@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-const StatValue = styled.p`
+const FeaturesList = styled.p`
+  font-size: 14px;
   font-weight: 600;
   color: ${props => props.theme.colors.charcoalGrey};
-  margin-bottom: 0.4em;
+  margin-top: 0.4em;
 `;
 
-export default StatValue;
+export default FeaturesList;
