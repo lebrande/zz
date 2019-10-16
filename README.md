@@ -14,6 +14,7 @@
 
 # What else could be done?
 - Getting some code tidied up
+- Getting more real data.
 - Image placeholder.
 - Image lazyloading.
 - Loading indicators and animations.

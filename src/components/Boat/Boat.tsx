@@ -5,11 +5,10 @@ import { IMAGE_BASE_URL } from '../../constants';
 import { BoatData } from '../../types/BoatData';
 import { device } from '../../styled/breakpoints';
 
+import Text7 from '../../styled/typography/Text7';
 import BoatName from '../BoatName/BoatName';
 import Cell from '../Cell/Cell';
 import Row from '../Row/Row';
-import BoatWrapper from './BoatWrapper';
-import BoatLabel from './BoatLabel';
 import Badge from '../Badge/Badge';
 import Stat from '../Stat/Stat';
 import Rating from '../Rating/Rating';
@@ -19,6 +18,28 @@ import Price from '../Price/Price';
 import CallToAction from '../CallToAction/CallToAction';
 
 type TProps = BoatData;
+
+const BoatWrapper = styled.div`
+  position: relative;
+  display: flex;
+  margin-bottom: 1em;
+  flex-direction: column;
+
+  @media ${device.laptop} {
+    flex-direction: row;
+    border-bottom: 1px solid ${props => props.theme.colors.pinkishGrey};
+  }
+`;
+
+const BoatLabel = styled(Text7)`
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: 8px 8px 8px 18px;
+  background-color: ${props => props.theme.colors.charcoalGrey};
+  position: absolute;
+  top: 2em;
+  left: 0;
+`;
 
 const Content = styled.div`
   flex-grow: 1;

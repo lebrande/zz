@@ -1,11 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
 
 // @ts-ignore
 import starSvg from '../../svg/star.svg';
-
-import RatingStars from './RatingStars';
-import RatingStar from './RatingStar';
 import Label from '../Label/Label';
+
+const RatingStars = styled.div`
+  display: flex;
+  margin-bottom: 0.4em;
+`;
+
+const RatingStar = styled.img`
+  height: 16px;
+`;
 
 const Rating = () => (
   <>
