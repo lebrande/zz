@@ -12,6 +12,7 @@ const BoatWrapper = styled.div`
   @media ${device.laptop} {
     flex-direction: row;
     max-width: 1000px;
+    border-bottom: 1px solid ${props => props.theme.colors.pinkishGrey};
   }
 `;
 

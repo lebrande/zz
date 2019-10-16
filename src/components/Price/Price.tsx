@@ -14,6 +14,10 @@ const PriceValue = styled.div`
   display: flex;
   align-items: center;
   margin-top: 0.4em;
+
+  @media ${device.laptop} {
+    margin-top: 0em;
+  }
 `;
 
 const PriceAmount = styled(Text5)`
@@ -37,10 +41,16 @@ const DotButton = styled.button`
 `;
 
 const PriceWrapper = styled.div`
+  width: 100%;
+
   @media ${device.laptop} {
     display: flex;
     align-items: baseline;
   }
+`;
+
+const PriceLabel = styled(Label)`
+  flex-grow: 1;
 `;
 
 const Price: FunctionComponent<TProps> = ({
@@ -48,7 +58,7 @@ const Price: FunctionComponent<TProps> = ({
   period,
 }) => (
   <PriceWrapper>
-    <Label>From</Label>
+    <PriceLabel>From</PriceLabel>
     <PriceValue>
       <PriceAmount>{price}</PriceAmount>
       <PricePeriod>{period}</PricePeriod>

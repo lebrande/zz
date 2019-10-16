@@ -36,6 +36,7 @@ const CallToActionButton = styled.button`
   color: #FFFFFF;
   text-transform: uppercase;
   font-weight: 600;
+  margin: 0 10px;
 
   &:after,
   &:before {

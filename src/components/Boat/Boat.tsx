@@ -20,7 +20,14 @@ import CallToAction from '../CallToAction/CallToAction';
 
 type TProps = BoatData;
 
+const Content = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
 const Container = styled.div`
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 
@@ -30,26 +37,76 @@ const Container = styled.div`
 `;
 
 const CtaRow = styled(Row)`
+  flex-grow: 1;
+
   @media ${device.laptop} {
     flex-direction: column;
+    border-left: none;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
   }
 `;
 
 const DetailsRow = styled(Row)`
+  flex-grow: 1;
+
   @media ${device.laptop} {
     flex-direction: column;
+    width: 324px;
   }
 `;
 
 const DetailsCell = styled(Cell)`
+  border-right: none;
+  width: 140px;
+
+  &:nth-of-type(1) {
+    flex-grow: 1;
+  }
+
   @media ${device.laptop} {
     flex-grow: 0;
     padding-bottom: 6px;
+    width: auto;
 
     &:nth-of-type(1) {
+      flex-grow: 0;
       padding-top: 14px;
       padding-bottom: 0;
     }
+  }
+`;
+
+const ImageRow = styled(Row)`
+  @media ${device.laptop} {
+    border-right: none;
+  }
+`;
+
+const PriceCell = styled(Cell)`
+  flex-grow: 1;
+
+  @media ${device.laptop} {
+    border-right: none;
+    border-bottom: 1px solid ${props => props.theme.colors.pinkishGrey};
+  }
+`;
+
+const BoatNameCell = styled(Cell)`
+  flex-grow: 1;
+`;
+
+const RatingCell = styled(Cell)`
+  flex-grow: 1;
+`;
+
+const StatCell = styled(Cell)`
+  width: 90px;
+
+  @media ${device.laptop} {
+    width: 110px;
   }
 `;
 
@@ -72,16 +129,16 @@ const Boat: FunctionComponent<TProps> = ({
 }) => (
   <BoatWrapper>
     <BoatLabel>Zizoo recommended</BoatLabel>
-    <Row>
+    <ImageRow>
       <Cell>
         <div>
           <img src={`${IMAGE_BASE_URL}${images[0]}`} alt={name}/>
         </div>
       </Cell>
-    </Row>
-    <div>
+    </ImageRow>
+    <Content>
       <Row highlighted>
-        <Cell>
+        <BoatNameCell>
           <BoatName
             name={name}
             model={model}
@@ -89,40 +146,40 @@ const Boat: FunctionComponent<TProps> = ({
             country={country}
             locality={locality}
           />
-        </Cell>
+        </BoatNameCell>
         <Cell centeredV centeredH>
           <Badge />
         </Cell>
       </Row>
       <Row>
-        <Cell centeredV centeredH>
+        <StatCell centeredV centeredH>
           <Stat value={`${length}m`} name="length"/>
-        </Cell>
-        <Cell centeredV centeredH>
+        </StatCell>
+        <StatCell centeredV centeredH>
           <Stat value={`${cabins}`} name="cabins"/>
-        </Cell>
-        <Cell centeredV centeredH>
+        </StatCell>
+        <StatCell centeredV centeredH>
           <Stat value={`${nr_guests}`} name="guests"/>
-        </Cell>
-        <Cell centeredV centeredH>
+        </StatCell>
+        <RatingCell centeredV centeredH>
           <Rating />
-        </Cell>
+        </RatingCell>
       </Row>
       <Container>
         <DetailsRow>
-          <DetailsCell noBorder>
+          <DetailsCell>
             <CheckList items={[
               'Sicherungsshein',
               'Luxury',
             ]} />
           </DetailsCell>
-          <DetailsCell noBorder>
+          <DetailsCell>
             <Features
               label="Sail type"
               list={['Rolling Mainsail']}
             />
           </DetailsCell>
-          <DetailsCell noBorder>
+          <DetailsCell>
             <Features
               label="Free extras"
               list={['AirCon', 'WiFi']}
@@ -130,12 +187,12 @@ const Boat: FunctionComponent<TProps> = ({
           </DetailsCell>
         </DetailsRow>
         <CtaRow>
-          <Cell centeredV>
+          <PriceCell centeredV>
             <Price
               price="€1,094.00"
               period="weekly"
             />
-          </Cell>
+          </PriceCell>
           <Cell centeredH centeredV>
             <CallToAction
               label="direct booking"
@@ -144,7 +201,7 @@ const Boat: FunctionComponent<TProps> = ({
           </Cell>
         </CtaRow>
       </Container>
-    </div>
+    </Content>
   </BoatWrapper>
 );
 

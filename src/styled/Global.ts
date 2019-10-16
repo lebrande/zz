@@ -12,6 +12,10 @@ const Global = createGlobalStyle`
   button {
     border: none;
   }
+
+  * {
+    box-sizing: border-box;
+  }
 `;
 
 export default Global;

@@ -25,6 +25,12 @@ const FeaturesList = styled.p`
   }
 `;
 
+const FeaturesLabel = styled(Label)`
+  @media ${device.laptop} {
+    width: 90px;
+  }
+`;
+
 type TProps = {
   label: string;
   list: string[];
@@ -35,9 +41,9 @@ const Features: FunctionComponent<TProps> = ({
   list,
 }) => (
   <FeaturesWrapper>
-    <Label>
+    <FeaturesLabel>
       {label}
-    </Label>
+    </FeaturesLabel>
     <FeaturesList>
       {list.join(', ')}
     </FeaturesList>
