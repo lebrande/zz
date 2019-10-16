@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Label from '../Label/Label';
 import Text5 from '../../styled/typography/Text5';
+import { device } from '../../styled/breakpoints';
 
 type TProps = {
   price: string;
@@ -35,18 +36,25 @@ const DotButton = styled.button`
   margin: 0 14px;
 `;
 
+const PriceWrapper = styled.div`
+  @media ${device.laptop} {
+    display: flex;
+    align-items: baseline;
+  }
+`;
+
 const Price: FunctionComponent<TProps> = ({
   price,
   period,
 }) => (
-  <>
+  <PriceWrapper>
     <Label>From</Label>
     <PriceValue>
       <PriceAmount>{price}</PriceAmount>
       <PricePeriod>{period}</PricePeriod>
       <DotButton>?</DotButton>
     </PriceValue>
-  </>
+  </PriceWrapper>
 );
 
 export default Price;
